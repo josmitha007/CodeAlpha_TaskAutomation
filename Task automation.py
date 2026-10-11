@@ -1,18 +1,15 @@
-import re
+import time
 
-with open("sample.txt", "r") as file:
-    content = file.read()
+tasks = [
+    "Complete assignment",
+    "Study for exam",
+    "Submit project"
+]
 
-emails = re.findall(
-    r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}',
-    content
-)
+print("Daily Task Automation")
 
-with open("emails.txt", "w") as file:
-    for email in emails:
-        file.write(email + "\n")
+for task in tasks:
+    print("Reminder:", task)
+    time.sleep(2)
 
-print("Emails Extracted Successfully!")
-
-for email in emails:
-    print(email)
+print("All tasks displayed successfully!")
